@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/nav')%>
+    <header>
+        <h1>Menú</h1>
+        <h2 class="aside-title">¡Prueba nuestros mejores platos!</h2>
+    </header>
+    <div class="menu">
+        <ul>
+            <li>Hamburguesas <span><i class="fa-solid fa-burger"></i></span></li>
+            <li>Pizzas <span><i class="fa-solid fa-pizza-slice"></i></span></li>
+            <li>Carnes <span><i class="fa-solid fa-drumstick-bite"></i></span></li>
+            <li>Postres <span><i class="fa-solid fa-ice-cream"></i></span></li>
+            <li>Bebidas <span><i class="fa-solid fa-wine-glass-empty"></i></span></li>
+        </ul>
+    </div>
+    <aside>
+        <div class="box-cards">
+            <div class="box-cards">
+                <%  info.map(i=>{ %>
+                    <div class="card">
+                    <img class="img-1" src="<%=i.url%>" alt=""> 
+                    <h2><%=i.data.nombre%></h2>
+                    <p><span>Precio:</span><%=i.data.precio%></p>
+                    <button data-id="<%=i.id%>">Ver más</button>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </aside>
+    <%-include('partials/footer')%>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/menu.js"></script>
+<script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+header{
+    background-image: url('https://rincondelgaucho.net/wp-content/uploads/2018/06/secciones.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    height: 100vh;
+}
+header h1,header h3,header p{
+    color: white;
+    text-align: center;
+}
+header h1{
+    transform: translateY(30vh);
+    font-size: 50px;
+}
+header h3{
+    transform: translateY(35vh);
+    font-size: 50px;
+    font-family: 'Sacramento', cursive;
+}
+header p{
+    transform: translateY(40vh);
+    margin: 0 3vw;
+}
+nav ul li:nth-child(2){
+    color: red;
+}
+aside{
+    margin: 5vh 0;
+}
+aside h2, aside p{
+    text-align: center;
+}
+aside h2{
+    margin:0 0 3vh 0;
+    font-size: 50px;
+}
+aside p{
+    margin: 0 5vw;
+}
+@media (max-width:680px) {
+
+    header{
+        height: 90vh;
+    }
+    header h1{
+        transform: translateY(5vh);
+        font-size: 15vw;
+    }
+    header h3{
+        transform: translateY(10vh);
+        font-size: 15vw;
+    }
+    header p{
+        transform: translateY(15vh);
+        font-size: 3vw;
+        margin: 0 1vw;
+    }
+    aside h2{
+        font-size: 15vw;
+    }
+    aside p{
+        margin: 0 3vw;
+    }
+}

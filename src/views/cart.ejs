@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/nav')%>
+    <header>
+        <h1>Carrito</h1>
+    </header>
+    <aside>
+        <div class="box">
+            <ul id="cart-list"></ul>
+            <button>Realizar el pedido</button>
+        </div>
+    </aside>
+    <%-include('partials/footer')%>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/cart.js"></script>
+<script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,68 @@
+header h1{
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 50px;
+}
+.box{
+    background-color: rgb(235, 235, 235);
+    margin: 5vh auto;
+    width: 40vw;
+}
+.box ul{
+    padding: 10px;
+}
+.box ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1.8vw;
+}
+.delete{
+    color: red;
+    transform: scale(1.1);
+    padding: 5px;
+}
+.delete:hover {
+    background-color: red;
+    transform: scale(1.4);
+    color: white;
+}
+.box button{
+    width: 25%;
+    font-size: 1.5vw;
+    margin: 3% 37.5%;
+    padding: 5px;
+    background-color: rgb(29, 29, 255);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+button:hover{
+    box-shadow: 0px 4px 6px rgb(148, 145, 145);
+    background-color: rgb(18, 93, 253);
+}
+@media (max-width:680px) {
+    
+    header h1{
+        margin-top: 1vh;
+        font-size: 15vw;
+    }
+    .box{
+        margin: 3vh auto;
+        width: 80vw;
+    }
+    .box ul li{
+        font-size: 4vw;
+    }
+    .box button{
+        width: 60%;
+        font-size: 5vw;
+        margin: 3% 20%;
+    }
+
+}

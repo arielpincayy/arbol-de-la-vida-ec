@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/nav'); %>
+    <header>
+        <div class="social-network-icons">
+            <div class="fb">
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div class="ig">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="ws">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="tw">
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+        <img class="logo" src="https://www.sosfactory.com/wp-content/uploads/2016/12/logo-mr-bolat.png" alt="">
+        <h1>FOODIE-FOODS</h1>
+        <button>MENÚ</button>
+    </header>
+    <br>
+    <aside>
+        <h2 class="aside-title">¡Prueba nuestros mejores platos!</h2>
+        <div class="box-cards">
+            <%  info.map(i=>{ %>
+                <div class="card">
+                <img class="img-1" src="<%=i.url%>" alt=""> 
+                <h2><%=i.data.nombre%></h2>
+                <p><span>Precio:</span><%=i.data.precio%></p>
+                <button data-id="<%=i.id%>">Ver más</button>
+                </div>
+            <% }) %>
+        </div>
+    </aside>
+    <%- include('partials/footer'); %>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/home.js"></script>
+<script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/reservations.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/nav')%>
+    <header>
+        <h1>Reservaciones</h1>
+    </header>
+    <aside>
+        <form action="/reservation" method="post">
+            <div>
+                <h2>Fecha</h2>
+                <input type="date" name="dateReser" id="date-reser">
+            </div>
+            <div>
+                <h2>Hora</h2>
+                <select name="time" id="time">
+                    <option value="8:00-10:00">8:00-10:00</option>
+                    <option value="10:00-12:00">10:00-12:00</option>
+                    <option value="12:00-13:00">12:00-13:00</option>
+                    <option value="13:00-14:00">13:00-14:00</option>
+                    <option value="14:00-15:00">14:00-15:00</option>
+                    <option value="15:00-16:00">15:00-16:00</option>
+                    <option value="16:00-17:00">16:00-17:00</option>
+                    <option value="17:00-18:00">17:00-18:00</option>
+                    <option value="18:00-19:00">18:00-19:00</option>
+                </select>
+            </div>
+            <div>
+                <h2>Información adicional</h2>
+                <input type="text" name="infoAdd" id="info-add">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </aside>
+    <%-include('partials/footer')%>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/reservation.js"></script>
+<script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
+</html>

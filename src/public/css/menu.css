@@ -1,0 +1,127 @@
+header{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    margin: 1vh 0 0 0;
+    background: rgb(14,14,14);
+    background: linear-gradient(72deg, rgba(14,14,14,1) 45%, rgba(74,70,70,1) 100%);
+    height: 30vh;
+}
+header h2{
+    text-align: center;
+    font-size: 1.5vw;
+}
+nav ul li:nth-child(3){
+    color: red;
+}
+.menu{
+    background-color: red;
+}
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1vw;
+    margin: 0 1.5vw;    
+    list-style: none;
+}
+.menu ul li{
+    font-size: 2vw;
+    color: white;
+    padding: 7px 5px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+.menu ul li:hover{
+    background-color: white;
+    color: red;
+    transform: scale(1.1);
+}
+.box-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2vw;
+    margin: 5vh 3vw;
+}
+.box-cards p span{
+    color: red;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    padding: 5px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgb(199, 199, 199);
+}
+.card h2{
+    font-size: 1.5vw;
+}
+.card:hover{
+    border: 1px solid red;
+    box-shadow: 0px 4px 6px red;
+}
+.card img{
+    border-radius: 20px;
+    width: 100%;
+    transition: .8s;
+}
+.card p{
+    text-align: center;
+    font-size: 1.7vw;
+    margin: 2vh 0;
+    font-weight: bold;
+}
+.card button{
+    font-size: 1.8vw;
+    background-color: transparent;
+    width: 90%;
+    margin: 10px 30% 1.5vh 30%;
+    padding: 10px 0;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    box-shadow: 0px 2px 8px rgb(199, 199, 199);
+    border: none;
+    border-radius: 5px;
+}
+.card button:hover{
+    transform: scale(1.1);
+    background-color: rgb(88, 255, 55);
+}
+@media (max-width:680px) {
+
+    header{
+        font-size: 15vw;
+    }
+    header h2{
+        font-size: 5vw;
+    }
+    .menu ul{
+        justify-content: space-around;
+        margin: 0 0.5vw;    
+        list-style: none;
+    }
+    .menu ul li{
+        font-size: 3vw;
+        padding: 7px 2px;
+    }
+    .box-cards{
+        gap: 10px;
+        margin: 5vh 1vw;
+    }
+    .card{
+        width: 45vw;
+    }
+    .card h2{
+        font-size: 3.5vw;
+    }
+    .card p{
+        font-size: 4vw;
+    }
+    .card button{
+        font-size: 4vw;
+    }
+}
