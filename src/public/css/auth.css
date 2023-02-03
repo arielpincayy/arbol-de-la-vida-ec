@@ -51,3 +51,16 @@ form button{
     border: none;
     background-color: transparent;
 }
+@media (max-width:680px) {
+    form{
+        width: 80vw;
+        min-height: 300px;
+    }
+    form button{
+        padding: 5px 0;
+        font-size: 3.5vw;
+    }
+    .other{
+        font-size: 3vw;
+    }
+}

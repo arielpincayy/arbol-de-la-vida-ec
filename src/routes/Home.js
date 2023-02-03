@@ -71,32 +71,12 @@ app.get('/cart',verifyToken,(req,res)=>{
 });
 
 app.get("/reservation", verifyToken, async (req, res) => {
-  const email = jwt.decode(req.query.accesToken);
   res.render('reservations');
 });
 
 app.post('/reservation',async(req,res)=>{
-    const {dateReser, time, infoAdd} = req.body;
-    const email = jwt.decode(req.query.accesToken);
-
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: 'arielpincay812@gmail.com', // generated ethereal user
-      pass: process.env.PASSWORDEMAIL, // generated ethereal password
-    },
-  });
-
-  let info = await transporter.sendMail({
-    from: `"Customer" <${email}>`, // sender address
-    to: "arielpincay812@gmail.com", // list of receivers
-    subject: "Reservación", // Subject line
-    text: `Hola, deseo hacer una reservacion el ${dateReser} a las ${time}. ${infoAdd}`, // plain text body
-    html: `<p>Hola, deseo hacer una reservacion el ${dateReser} a las ${time}.<br>${infoAdd}</p>`, // html body
-  });
-  res.send(info)
+    const { dateReser, time, infoAdd, numeroPersonas } = req.body;
+    res.redirect(`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20hacer%20una%20reservacion%20de%20${numeroPersonas}%20el%20${dateReser}%20a%20las%20${time}.%20${infoAdd}`);
 
 });
 

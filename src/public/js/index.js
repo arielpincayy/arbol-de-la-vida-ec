@@ -21,7 +21,6 @@ cart.addEventListener('click',()=>{
 
 bar.addEventListener('click',()=>{
     nav.classList.toggle('nav_toggle');
-    console.log('uwu');
 });
 
 function getCookie(){

@@ -49,6 +49,7 @@ app.post('/signUp',(req,res)=>{
       const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
+      res.send(error);
     });
 });
 
@@ -65,6 +66,8 @@ app.post('/signIn',(req,res)=>{
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          console.log(error);
+          (error.code === "auth/wrong-password")?res.send("Contraseña o correo incorrecto"):res.send("Ocurrió un error en el servidor, inténtelo más tarde")
         });
 });
 

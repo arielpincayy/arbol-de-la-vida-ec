@@ -135,7 +135,7 @@ aside{
 @media (max-width:680px) {
     header h1{
         transform: translateY(30vh);
-        font-size: 60px;
+        font-size: 15vw;
     }
     header button{
         display: none;
@@ -154,13 +154,14 @@ aside{
         color: white;
     }
     .social-network-icons i{
-        font-size: 15vw;
+        font-size: 10vw;
     }
     .box-cards h2{
         font-size: 3.5vw;
     }
     .card{
         width: 45vw;
+        min-height: 350px;
     }
     .card p{
         font-size: 5vw;
