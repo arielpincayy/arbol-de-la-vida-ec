@@ -133,7 +133,12 @@ aside{
     background-color: rgb(88, 255, 55);
 }
 
-@media screen and (min-width: 400px) and (max-width: 800px) {
+@media (max-width: 800px) {
+    .logo{
+        position: absolute;
+        width: 40vw;
+        transform: translate(30vw, 3vh);
+    }
     header{
         height: 70vh;
     }
@@ -143,11 +148,6 @@ aside{
     }
     header button{
         display: none;
-    }
-    .logo{
-        position: absolute;
-        width: 40vw;
-        transform: translate(30vw, 3vh);
     }
     .social-network-icons{
         flex-direction: row;
@@ -175,7 +175,7 @@ aside{
     }
 }
 
-@media (max-width:400px) {
+@media (max-width:460px) {
     .logo{
         position: absolute;
         width: 50vw;
