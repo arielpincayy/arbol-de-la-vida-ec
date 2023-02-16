@@ -63,6 +63,7 @@ footer{
 .foot h1{
     margin-top: 10px;
     margin-bottom: 5px;
+    text-align: center;
 }
 .foot p{
     line-height: 25px;
@@ -78,6 +79,13 @@ footer{
     margin-top: 3vh;
     width: 100vw;
     background-color: #242424;
+}
+.map{
+    width: 100vw;
+}
+.map iframe{
+    width: 60%;
+    margin: 5vh 20%;
 }
 @media (max-width:680px) {
     .bar{
@@ -135,5 +143,9 @@ footer{
         margin-top: 3vh;
         width: 100vw;
         background-color: #242424;
+    }
+    .map iframe{
+        width: 90%;
+        margin: 5vh 5%;
     }
 }

@@ -1,27 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 header{
-    background-image: url('https://rincondelgaucho.net/wp-content/uploads/2018/06/secciones.jpg');
+    background-image: url('/img/BeFunky-collage.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    opacity: .5;
     height: 100vh;
 }
-header h1,header h3,header p{
-    color: white;
-    text-align: center;
+.text-header{
+    color: #000;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40vh;
 }
-header h1{
-    transform: translateY(30vh);
+.text-header h1{
     font-size: 50px;
 }
-header h3{
-    transform: translateY(35vh);
+.text-header h3{
     font-size: 50px;
     font-family: 'Sacramento', cursive;
 }
-header p{
-    transform: translateY(40vh);
-    margin: 0 3vw;
+.text-header p{
+    color: #000;
+    text-align: center;
+    margin: 0 1vw;
+    font-size: 1.5vw;
+    text-shadow: 0px 2px 2px #646262;
 }
 nav ul li:nth-child(2){
     color: red;
@@ -29,38 +36,63 @@ nav ul li:nth-child(2){
 aside{
     margin: 5vh 0;
 }
-aside h2, aside p{
+aside h2{
     text-align: center;
 }
 aside h2{
     margin:0 0 3vh 0;
     font-size: 50px;
 }
-aside p{
-    margin: 0 5vw;
+.story{
+    display: flex;
+    flex-direction: row;
+    margin: 5vh 5vw 0 5vw;
+    gap: 5vw;
+}
+.story p{
+    width: 50%;
+    text-align: justify;
+}
+.story img{
+    width: 40vw;
+    height: 80%;
+}
+.story-img{
+    opacity: 0;
+    transform: translateX(7vw);
+}
+.story-img_toggle{
+    opacity: 1;
+    transform: translateX(0vw);
+    transition: .5s;
 }
 @media (max-width:680px) {
 
     header{
         height: 90vh;
+        background-position: center;
     }
-    header h1{
-        transform: translateY(5vh);
-        font-size: 15vw;
+    .text-header{
+        text-align: center;
+        top: 20vh;
     }
-    header h3{
-        transform: translateY(10vh);
-        font-size: 15vw;
-    }
-    header p{
-        transform: translateY(15vh);
-        font-size: 3vw;
-        margin: 0 1vw;
+    .text-header p{
+        font-size: 4vw;
     }
     aside h2{
-        font-size: 15vw;
+        font-size: 10vw;
     }
     aside p{
         margin: 0 3vw;
+    }
+    .story{
+        display: flex;
+        flex-direction: column;
+    }
+    .story p{
+        width: 95%;
+    }
+    .story img{
+        width: 100%;
     }
 }

@@ -3,13 +3,18 @@ const { initializeApp } = require('firebase/app');
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } = require('firebase/auth');
 const { getStorage, ref, getDownloadURL } = require('firebase/storage');
 const { collection, query, where, getDocs, getFirestore, doc, getDoc, limit, onSnapshot } = require("firebase/firestore");
+
+
+require('dotenv').config();
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDIahFg46e7yxjh1JxOse4xPvIGrlugdQk",
+  apiKey: process.env.APIKEY,
   authDomain: "a-fuego-lento-58032.firebaseapp.com",
   projectId: "a-fuego-lento-58032",
   storageBucket: "a-fuego-lento-58032.appspot.com",

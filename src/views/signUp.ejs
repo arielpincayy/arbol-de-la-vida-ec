@@ -14,9 +14,18 @@
         <input type="email" name="email" id="email">
         <h2>Contraseña</h2>
         <input type="password" name="password" id="password">
+        <% if(!(route === "")){%>
+            <input type="text" class="in-hidden" name="route" value="<%=route%>">
+        <% }%>
         <button type="submit">Registrar</button>
+
+        <% if(!(err === "")){%>
+            <p class="error"><%= err %></p>
+        <% }%>
+
     </form>
     <button class="other" id="red">Login</button>
+    <button class="other return" id="return">Regresar</button>
 </body>
 <script src="/js/signUp.js"></script>
 </html>

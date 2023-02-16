@@ -1,4 +1,3 @@
-const Auth = require('./Auth');
 const { getProduct, getImg } = require('./firebase-config');
 
 const express = require('express');

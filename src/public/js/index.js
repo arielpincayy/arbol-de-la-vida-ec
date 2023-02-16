@@ -12,10 +12,10 @@ menu.addEventListener('click',()=>{
     window.location.href='/menu/Hamburguesas';
 });
 reservation.addEventListener('click',()=>{
-    window.location.href='/reservation'+existCookie();
+    window.location.href='/reservation?'+existCookie()+'&'+'route=reservation';
 });
 cart.addEventListener('click',()=>{
-    window.location.href='/cart'+existCookie();
+    window.location.href='/cart?'+existCookie()+'&'+'route=cart';
 });
 
 
@@ -36,7 +36,7 @@ function getCookie(){
 
 function existCookie(){
     if (getCookie() !== null) {
-        return `?accesToken=${getCookie()}`;
+        return `accesToken=${getCookie()}`;
     }
     return '';
 }
@@ -57,6 +57,6 @@ function expiresTime(){
 }
 
 function saveCookie() {
-    var cookie = ((window.location.search).split('='))[1];
+    var cookie = ((window.location.search).split('='))[1].split("&route")[0];
     document.cookie=`tokenId=${cookie};expires=${expiresTime()}`;
 }

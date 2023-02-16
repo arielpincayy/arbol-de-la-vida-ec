@@ -1,17 +1,16 @@
-const Auth = require('./Auth');
 const { getData, getImg, getDataMenu, week, onSnapshot, query, collection, db } = require('./firebase-config');
 
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const nodemailer = require("nodemailer");
 
 const app = express.Router();
 
 
 const verifyToken = (req,res,next) =>{
     const accesToken = req.query.accesToken;
+    const route = req.query.route;
     if(!accesToken) {
-        res.redirect('/signIn');
+        res.redirect('/signIn?route='+route);
     }else{
         jwt.verify(accesToken,process.env.SECRETKEY,(err,user)=>{
             if (err) {

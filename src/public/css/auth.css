@@ -51,6 +51,35 @@ form button{
     border: none;
     background-color: transparent;
 }
+.error{
+    color: red;
+    text-align: center;
+    animation: err-animation 0.2s linear;
+}
+@keyframes err-animation{
+    0%{
+        transform: translateX(0vw);
+    }
+    25%{
+        transform: translateX(1.5vw);
+    }
+    50%{
+        transform: translateX(0vw);
+    }
+    75%{
+        transform: translateX(-1.5vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+.return{
+    transform: translateY(3vh);
+    color: purple;
+}
+.in-hidden{
+    display: none;
+}
 @media (max-width:680px) {
     form{
         width: 80vw;
@@ -61,6 +90,6 @@ form button{
         font-size: 3.5vw;
     }
     .other{
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 }

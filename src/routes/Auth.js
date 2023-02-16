@@ -7,67 +7,52 @@ require('dotenv').config();
 const app = express.Router();
 
 
-const verifyToken = (req,res,next) =>{
-    const accesToken = req.query.accesToken;
-    if(!accesToken) {
-        res.redirect('/signUp');
-    }else{
-        jwt.verify(accesToken,process.env.SECRETKEY,(err,user)=>{
-            if (err) {
-                res.send('Access denied or incorrect, please do not fuck the life uwu');
-            } else {
-                next();
-            }
-        });
-    }
-}
-
-
 app.get('/signUp',(req,res)=>{
-    res.render('signUp');
+    const route = req.query.route||"";
+    res.render('signUp',{err:"", route});
 });
 
 app.get('/signIn',(req,res)=>{
-    res.render('signIn');
+    const route = req.query.route||"";
+    res.render('signIn',{err:"", route});
 });
 
-app.get('/dashboard',verifyToken,(req,res)=>{
-    const email = jwt.decode(req.query.accesToken);
-    res.send(email);
-});
 
 app.post('/signUp',(req,res)=>{
-    const {email, password} = req.body;
+    const {email, password, route} = req.body;
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
           const accesToken = generateAccessToken(email);
-          res.redirect('/cart?accesToken='+accesToken);
+          res.redirect("/"+route+'?accesToken='+accesToken);
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      res.send(error);
+        if (error.message==="Firebase: Error (auth/email-already-in-use).") {
+            let err = "Este correo ya fue registrado";
+            res.render("signUp",{err, route});
+          }
+          if (error.message==="Firebase: Password should be at least 6 characters (auth/weak-password).") {
+            let err = "La contraseña debe tener como mínimo 6 caractéres";
+            res.render("signUp",{err, route}); 
+          }  
     });
 });
 
 app.post('/signIn',(req,res)=>{
-    const {email, password} = req.body;
+    const {email, password, route} = req.body;
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
           const accesToken = generateAccessToken(email);
-          res.redirect('/cart?accesToken='+accesToken);
+          res.redirect("/"+route+'?accesToken='+accesToken);
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(error);
-          (error.code === "auth/wrong-password")?res.send("Contraseña o correo incorrecto"):res.send("Ocurrió un error en el servidor, inténtelo más tarde")
+            if (error.message==="Firebase: Error (auth/wrong-password)."||error.message==="Firebase: Error (auth/user-not-found).") {
+                let err = "Ha escrito un correo o contraseña erróneo";
+                res.render("signIn",{err,route});
+              } 
         });
 });
 
