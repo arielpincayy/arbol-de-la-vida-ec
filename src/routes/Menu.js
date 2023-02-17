@@ -1,13 +1,13 @@
-const { getData, getImg } = require('./firebase-config');
+const { getImg, getDataMenu } = require('./firebase-config');
 
 const express = require('express');
 
 const app = express.Router();
 
 
-app.get('/',async(req,res)=>{
+app.get('/menu/:id',async(req,res)=>{
     let arrData = [[],[],[]];
-    const querySnapshot = await getData();
+    const querySnapshot = await getDataMenu(req.params.id);
     querySnapshot.forEach((doc) => {
         arrData[0].push({id:doc.id, data:doc.data()});
         getImg(`menu-imgs/${doc.data().nameImg}`)
@@ -16,7 +16,7 @@ app.get('/',async(req,res)=>{
             arrData[1].push(url);
             if (arrData[1].length === arrData[0].length) {
                 let info = arrData[2];
-                res.render("index",{info});
+                res.render("menu",{info});
             }
         });
     });

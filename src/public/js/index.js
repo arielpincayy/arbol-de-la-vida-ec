@@ -17,12 +17,9 @@ reservation.addEventListener('click',()=>{
 cart.addEventListener('click',()=>{
     window.location.href='/cart?'+existCookie()+'&'+'route=cart';
 });
-
-
 bar.addEventListener('click',()=>{
     nav.classList.toggle('nav_toggle');
 });
-
 function getCookie(){
     const arrayToken = (document.cookie).split(';');
     const findToken = arrayToken.map((e)=>e.search('tokenId')!==-1);
@@ -33,16 +30,12 @@ function getCookie(){
     const cookieToken = arrayToken[index].split('=')[1];
     return cookieToken;
 }
-
 function existCookie(){
     if (getCookie() !== null) {
         return `accesToken=${getCookie()}`;
     }
     return '';
 }
-
-
-
 function expiresTime(){
     var fecha = new Date().toString();
     var datePartials = fecha.split(' ');
@@ -55,7 +48,6 @@ function expiresTime(){
       return date;
     }  
 }
-
 function saveCookie() {
     var cookie = ((window.location.search).split('='))[1].split("&route")[0];
     document.cookie=`tokenId=${cookie};expires=${expiresTime()}`;

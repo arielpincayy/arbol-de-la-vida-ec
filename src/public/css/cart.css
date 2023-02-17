@@ -49,6 +49,41 @@ button:hover{
 nav ul li:nth-child(5){
     color: red;
 }
+.pop-up{
+    width: 40vw;
+    background-color: white;
+    position: absolute;
+    left: 30vw;
+    right: 30vw;
+    top: -50vh;
+    box-shadow: 0px 2px 30px black;
+    text-align: center;
+    padding: 10px;
+    transition: 0.4s;
+}
+.pop-up_toggle{
+    top: 20vh;
+}
+.pop-up ul li{
+    list-style: none;
+}
+.pop-up button{
+    color: white;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    margin: 2vh 0;
+}
+.pay-box{
+    margin-top: 2vh;
+}
+.efectivo{
+    background-color: rgb(53, 134, 255);
+}
+.transfe{
+    background-color: rgb(12, 199, 12);
+}
 
 @media (max-width:680px) {
     
@@ -67,6 +102,15 @@ nav ul li:nth-child(5){
         width: 60%;
         font-size: 5vw;
         margin: 3% 20%;
+    }
+    .pop-up{
+        width: 80vw;
+        left: 10vw;
+        right: 10vw;
+        border-radius: 5px;
+    }
+    .pay-box button{
+        font-size: 4vw;
     }
 
 }

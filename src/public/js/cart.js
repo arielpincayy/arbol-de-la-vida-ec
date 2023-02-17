@@ -1,5 +1,6 @@
 const cartList = document.getElementById('cart-list');
-
+const buttonPedido = document.getElementById('pedido-button');
+const pop_up = document.querySelector('.pop-up');
 
 window.addEventListener('DOMContentLoaded',()=>{
     cartListShow();
@@ -31,5 +32,18 @@ function cartListShow(){
         });
     });
 }
+
+buttonPedido.addEventListener('click',()=>{
+    pop_up.classList.toggle('pop-up_toggle');
+    const idProduct = JSON.parse(localStorage.getItem('idProduct'));
+    idProduct.forEach(e=>{
+        document.querySelector('.pop-up ul').innerHTML+=`<li>${e}</li>`;
+    });
+    document.querySelectorAll('.pay-box button').forEach(i=>{
+        i.addEventListener('click',()=>{
+            window.location.href=`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20comprar%20"${idProduct.toString()}"`
+        });
+    });
+});
 
 
