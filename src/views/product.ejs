@@ -26,7 +26,7 @@
             <p> <span>Precio:</span> <%=datos.precio%></p>
             <h2>Cantidad</h2>
             <input type="number" name="cant" id="cant" value="1" min="1">
-            <button data-id="<%=datos.nombre%>">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
+            <button data-id="<%=datos.nombre%>&&<%=datos.precio%>">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
         </div>
     </aside>
     <%-include('partials/footer')%>

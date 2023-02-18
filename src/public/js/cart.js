@@ -10,10 +10,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 function cartListShow(){
     cartList.innerHTML=``;
     const idProduct = localStorage.getItem('idProduct');
+    let sum = 0;
     JSON.parse(idProduct).forEach(e => {
+        let i = e.split('&&');
+        sum += +i[1];
         cartList.innerHTML+=`
         <li>
-            <div>${e.toUpperCase()}</div>
+            <div>${i[0].toUpperCase()} $${i[1]}</div>
             <div>
                 <i data-name='${e}' class="fa-solid fa-trash delete"></i>
             </div>
@@ -31,17 +34,20 @@ function cartListShow(){
             });
         });
     });
+    document.querySelector('.suma').innerText=`$${sum}`;
 }
 
 buttonPedido.addEventListener('click',()=>{
     pop_up.classList.toggle('pop-up_toggle');
+    let arrPedido = [];
     const idProduct = JSON.parse(localStorage.getItem('idProduct'));
     idProduct.forEach(e=>{
-        document.querySelector('.pop-up ul').innerHTML+=`<li>${e}</li>`;
+        document.querySelector('.pop-up ul').innerHTML+=`<li>${e.split('&&')[0]}</li>`;
+        arrPedido.push(e.split("&&")[0]);
     });
     document.querySelectorAll('.pay-box button').forEach(i=>{
         i.addEventListener('click',()=>{
-            window.location.href=`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20comprar%20"${idProduct.toString()}"`
+            window.location.href=`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20comprar%20"${arrPedido.toString()}"`
         });
     });
 });

@@ -1,8 +1,13 @@
+body{
+    background-image: url('/img/fondo-arbol-de-la-vida.webp');
+    background-size: contain;
+}
 header{
     margin-left: 2vw;
 }
 header h1{
     font-size: 50px;
+    color:  #ec7c3c;
 }
 aside{
     display: flex;
@@ -10,9 +15,9 @@ aside{
     margin: 3vh 0;
 }
 aside h2{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Dancing Script Regula, sans-serif;
     font-size: 40px;
-    color: #525252;
+    color: black;
 }
 aside img{
     width: 30vw;    
@@ -28,16 +33,21 @@ aside img{
 .content ul{
     display: flex;
     flex-direction: column;
+    font-style: oblique;
 }
 .content p {
     font-size: 35px;
+    font-style: oblique;
 }
 .content p span{
     color: red;
+    font-weight: bold;
+    font-style: normal;
 }
 #cant{
     font-size: 2vw;
     width: 2vw;
+    font-style: oblique;
 }
 .content button{
     width: 10vw;
@@ -55,6 +65,10 @@ aside img{
     -moz-box-shadow: -1px 1px 6px 0px rgba(0, 0, 0, 0.75);
 }
 @media (max-width:680px) {
+    body{
+        background-image: url('/img/Fondo-celular-arbol-de-la-vida.webp');
+        background-size: contain;
+    }
     aside{
         display: flex;
         flex-direction: column;

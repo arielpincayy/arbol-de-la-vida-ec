@@ -22,19 +22,16 @@ const verifyToken = (req,res,next) =>{
 
 app.get("/reservation", verifyToken, async (req, res) => {
     res.render('reservations');
-  });
+});
   
-  app.get('/cart',verifyToken,(req,res)=>{
-      const email = jwt.decode(req.query.accesToken);
-      console.log(email);
-      res.render('cart');
-  });
+app.get('/cart',verifyToken,(req,res)=>{
+    res.render('cart');
+});
   
-  app.post('/reservation',async(req,res)=>{
-      const { dateReser, time, infoAdd, numeroPersonas } = req.body;
-      res.redirect(`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20hacer%20una%20reservacion%20de%20${numeroPersonas}%20el%20${dateReser}%20a%20las%20${time}.%20${infoAdd}`);
-  
-  });
+app.post('/reservation',async(req,res)=>{
+    const { dateReser, time, infoAdd, numeroPersonas } = req.body;
+    res.redirect(`https://api.whatsapp.com/send?phone=982028213&text=Hola%20deseo%20hacer%20una%20reservacion%20de%20${numeroPersonas}%20el%20${dateReser}%20a%20las%20${time}%20${infoAdd}`);
+});
 
   
 module.exports = app;
