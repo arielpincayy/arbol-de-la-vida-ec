@@ -47,6 +47,7 @@ buttonPedido.addEventListener('click',()=>{
     });
     document.querySelectorAll('.pay-box button').forEach(i=>{
         i.addEventListener('click',()=>{
+            localStorage.clear();
             window.location.href=`https://api.whatsapp.com/send?phone=982028213&text=Hola,%20deseo%20comprar%20"${arrPedido.toString()}"`
         });
     });
