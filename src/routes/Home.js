@@ -4,12 +4,8 @@ const express = require('express');
 
 const app = express.Router();
 
-app.get('/',(req,res)=>{
-    res.render('loading');
-});
 
-
-app.get('/Home',async(req,res)=>{
+app.get('/',async(req,res)=>{
     let info = [];
     const querySnapshot = await getData();
     querySnapshot.forEach((doc) => {
