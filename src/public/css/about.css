@@ -65,6 +65,21 @@ aside h2{
     transform: translateX(0vw);
     transition: .5s;
 }
+.collage{
+    width: 100vw;
+}
+.collage img{
+    width: 100%;
+}
+.collage_img{
+    opacity: 0;
+    transform: translateX(-7vw);
+}
+.collage_img_toggle{
+    opacity: 1;
+    transform: translateX(0vw);
+    transition: .5s;
+}
 @media (max-width:680px) {
 
     header{
