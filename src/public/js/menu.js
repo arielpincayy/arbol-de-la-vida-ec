@@ -1,4 +1,4 @@
-const [hamburger, pizza, meat, desert, drink] = document.querySelectorAll('.menu ul li');
+const [hamburger, pizza, sanduche, compartir, internacional, desayuno, ensalada, helado, pita, bebida ] = document.querySelectorAll('.menu ul li');
 const boton = document.querySelectorAll('.card button');
 
 boton.forEach(e=>{
@@ -8,17 +8,36 @@ boton.forEach(e=>{
 });
 
 hamburger.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Hamburguesas';
+    window.location.href='/menu/hamburguesa';
 });
 pizza.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Pizzas';
+    window.location.href='/menu/pizza';
 });
-meat.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Meats';
+compartir.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/compartir';
 });
-desert.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Deserts';
+sanduche.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/sanduche';
 });
-drink.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Drinks';
+bebida.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/bebida';
 });
+pita.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/pita';
+});
+helado.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/helado';
+});
+desayuno.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/desayuno';
+});
+internacional.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/internacional';
+});
+ensalada.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/ensalada';
+});
+
+
+
+

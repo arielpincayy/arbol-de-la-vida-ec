@@ -19,14 +19,14 @@ nav ul li:nth-child(3){
 }
 .menu ul{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1vw;
     margin: 0 1.5vw;    
     list-style: none;
 }
 .menu ul li{
-    font-size: 2vw;
+    font-size: 1.3vw;
     color: white;
     padding: 7px 5px;
     border-left: 2px solid white;
@@ -63,11 +63,12 @@ aside{
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
 }
 .card h2{
-    font-size: 1.5vw;
+    font-size: 1.7vw;
+    font-family: 'Dancing Script Regula', sans-serif;
+    color:  #ec7c3c;
 }
 .card:hover{
-    border: 1px solid red;
-    box-shadow: 0px 4px 6px red;
+    box-shadow: 0px 4px 6px rgb(119, 118, 118);
 }
 .card img{
     border-radius: 20px;
@@ -110,7 +111,7 @@ aside{
         list-style: none;
     }
     .menu ul li{
-        font-size: 2.8vw;
+        font-size: 3.5vw;
         padding: 7px 1vw;
         border: none;
     }
@@ -131,7 +132,6 @@ aside{
         font-size: 4vw;
     }
     .card:hover{
-        border: none;
         box-shadow: 0px 4px 6px rgb(54, 53, 53);
     }
 }

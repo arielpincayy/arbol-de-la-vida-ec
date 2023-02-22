@@ -18,6 +18,4 @@ app.get('/',async(req,res)=>{
         });
     });
 });
-
-//uwu
 module.exports = app;

@@ -9,7 +9,7 @@ about.addEventListener('click',()=>{
     window.location.href='/about';
 });
 menu.addEventListener('click',()=>{
-    window.location.href='/menu/Hamburguesas';
+    window.location.href='/menu/hamburguesa';
 });
 reservation.addEventListener('click',()=>{
     window.location.href='/reservation?'+existCookie()+'&'+'route=reservation';
