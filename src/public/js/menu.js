@@ -1,4 +1,4 @@
-const [hamburger, pizza, sanduche, compartir, internacional, desayuno, ensalada, helado, pita, bebida ] = document.querySelectorAll('.menu ul li');
+const [hamburger, pizza, sanduche, compartir, internacional, desayuno, ensalada, helado, waffle ,pita, bebida ] = document.querySelectorAll('.menu ul li');
 const boton = document.querySelectorAll('.card button');
 
 boton.forEach(e=>{
@@ -27,6 +27,9 @@ pita.addEventListener('click',(req,res)=>{
 });
 helado.addEventListener('click',(req,res)=>{
     window.location.href='/menu/helado';
+});
+waffle.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/waffle';
 });
 desayuno.addEventListener('click',(req,res)=>{
     window.location.href='/menu/desayuno';
