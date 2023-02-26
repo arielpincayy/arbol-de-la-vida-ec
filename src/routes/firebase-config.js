@@ -14,13 +14,13 @@ require('dotenv').config();
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: "a-fuego-lento-58032.firebaseapp.com",
-  projectId: "a-fuego-lento-58032",
-  storageBucket: "a-fuego-lento-58032.appspot.com",
-  messagingSenderId: "437062711642",
-  appId: "1:437062711642:web:ebbd5ac9e7de858f859b63",
-  measurementId: "G-YVHKEDXE5K"
+  apiKey: "AIzaSyCkqjxBBvJRCl6z3hx62MmAgN-KCc2xJ7k",
+  authDomain: "arbol-de-la-vida-4676e.firebaseapp.com",
+  projectId: "arbol-de-la-vida-4676e",
+  storageBucket: "arbol-de-la-vida-4676e.appspot.com",
+  messagingSenderId: "310565738448",
+  appId: "1:310565738448:web:42d51d20824f90e9418bd5",
+  measurementId: "G-MXZ1GHNM9E"
 };
 
 // Initialize Firebase
