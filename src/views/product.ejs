@@ -24,9 +24,22 @@
                 <% }) %>
             </ul>
             <p> <span>Precio:</span> <%=datos.precio%></p>
+            <%if(extra){%>
+                <h2>Extras</h2>
+                <div class="extra">
+                    <div class="extra-p"data-name="Choclo-0.5">Choclo</div>
+                    <div class="extra-p"data-name="Aceitunas-0.5">Aceitunas</div>
+                    <div class="extra-p"data-name="Champiñones-0.5">Champiñones</div>
+                    <div class="extra-p"data-name="Queso mozarella-0.5">Queso mozarella</div>
+                    <div class="extra-p"data-name="Peperoni-0.75">Peperoni</div>
+                    <div class="extra-p"data-name="Salami italiano-0.75">Salami italiano</div>
+                    <div class="extra-p"data-name="Jamón-0.75">Jamón</div>
+                    <div class="extra-p"data-name="Pollo-0.75">Pollo</div>
+                </div>
+            <%}%>
             <h2>Cantidad</h2>
             <input type="number" name="cant" id="cant" value="1" min="1">
-            <button data-id="<%=datos.nombre%>&&<%=datos.precio%>">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
+            <button data-id="<%=datos.nombre%>" data-price="<%=datos.precio%>">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
         </div>
     </aside>
     <%-include('partials/footer')%>

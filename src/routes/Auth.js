@@ -24,7 +24,7 @@ app.post('/signUp',(req,res)=>{
     .then((userCredential) => {
       // Signed in
           const accesToken = generateAccessToken(email);
-          res.redirect("/"+route+'?accesToken='+accesToken);
+          res.redirect('/'+route+'?accesToken='+accesToken);
     })
     .catch((error) => {
         if (error.message==="Firebase: Error (auth/email-already-in-use).") {

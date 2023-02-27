@@ -21,8 +21,8 @@ nav ul li:nth-child(3){
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1vw;
-    margin: 0 1.5vw;    
+    gap: 0.3vw;
+    margin: 0 1vw;    
     list-style: none;
 }
 .menu ul li{
@@ -63,23 +63,18 @@ aside{
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
 }
 .card h2{
-    font-size: 1.7vw;
+    font-size: 2.1vw;
+    text-align: center;
     font-family: 'Dancing Script Regula', sans-serif;
     color:  #ec7c3c;
 }
 .card:hover{
     box-shadow: 0px 4px 6px rgb(119, 118, 118);
 }
-.card img{
-    border-radius: 20px;
-    width: 100%;
-    transition: .8s;
-}
 .card p{
     text-align: center;
     font-size: 1.7vw;
     margin: 2vh 0;
-    font-weight: bold;
 }
 .card button{
     font-size: 1.8vw;
@@ -87,7 +82,7 @@ aside{
     width: 90%;
     margin: 10px 30% 1.5vh 30%;
     padding: 10px 0;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 81, 255);
     color: white;
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
     border: none;
@@ -123,7 +118,8 @@ aside{
         width: 45vw;
     }
     .card h2{
-        font-size: 3.5vw;
+        text-align: center;
+        font-size: 4vw;
     }
     .card p{
         font-size: 4vw;

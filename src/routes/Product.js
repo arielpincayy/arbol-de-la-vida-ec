@@ -4,13 +4,17 @@ const express = require('express');
 
 const app = express.Router();
 
+var extra=false;
 app.get("/product/:id", async(req,res)=>{
     const id = req.params.id;
     const querySnapshot = await getProduct(id);
     const datos = querySnapshot.data();
     getImg(`menu-imgs/${datos.nameImg}`)
     .then((url)=>{
-        res.render("product", {datos, url});
+        if (datos.seccion === 'pizza') {
+            var extra=true;
+        }
+        res.render("product", {datos, url, extra});   
     });
 
 });

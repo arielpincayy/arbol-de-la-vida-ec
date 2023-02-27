@@ -2,7 +2,7 @@
 const { initializeApp } = require('firebase/app');
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } = require('firebase/auth');
 const { getStorage, ref, getDownloadURL } = require('firebase/storage');
-const { collection, query, where, getDocs, getFirestore, doc, getDoc, limit, onSnapshot } = require("firebase/firestore");
+const { collection, query, where, getDocs, getFirestore, doc, getDoc, limit, onSnapshot, orderBy } = require("firebase/firestore");
 
 
 require('dotenv').config();

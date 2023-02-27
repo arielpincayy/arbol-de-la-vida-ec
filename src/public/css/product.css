@@ -20,9 +20,29 @@ aside h2{
     color: black;
 }
 aside img{
-    width: 30vw;    
+    width: 400px;
+    height: 400px;    
     margin: 2vh 0 5vh 2vw;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+.extra{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.extra-p{
+    background-color: rgb(0, 140, 255);
+    color: white;
+    padding: 0.3rem;
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+.extra_toggle{
+    background-color: red;
+}
+.extra-p:hover{
+    background-color: red;
 }
 .content{
     display: flex;

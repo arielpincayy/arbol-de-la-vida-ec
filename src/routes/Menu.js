@@ -16,7 +16,22 @@ app.get('/menu/:id',async(req,res)=>{
             arrData[1].push(url);
             if (arrData[1].length === arrData[0].length) {
                 let info = arrData[2];
-                res.render("menu",{info});
+                function compararPorNombre(a, b) {
+                    const nombreA = a.data.nombre.toUpperCase();
+                    const nombreB = b.data.nombre.toUpperCase();
+                  
+                    if (nombreA < nombreB) {
+                      return -1;
+                    }
+                    if (nombreA > nombreB) {
+                      return 1;
+                    }
+                    return 0;
+                  }
+                  
+                  const menuOrdenado = info.sort(compararPorNombre);
+                  
+                res.render("menu",{menuOrdenado});
             }
         });
     });
