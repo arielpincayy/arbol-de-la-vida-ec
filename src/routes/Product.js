@@ -9,7 +9,7 @@ app.get("/product/:id", async(req,res)=>{
     const id = req.params.id;
     const querySnapshot = await getProduct(id);
     const datos = querySnapshot.data();
-    getImg(`menu-imgs/${datos.nameImg}`)
+    getImg(`menu-imgs/${datos.seccion}.webp`)
     .then((url)=>{
         if (datos.seccion === 'pizza') {
             var extra=true;
