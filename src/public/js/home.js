@@ -1,4 +1,9 @@
 const boton = document.querySelectorAll('.card button');
+const [fb,ig,ws] = document.querySelectorAll('.social-network-icons div');
+
+fb.addEventListener('click',()=>window.location.href="https://www.facebook.com/profile.php?id=100080858812728");
+ig.addEventListener('click',()=>window.location.href="https://www.instagram.com/arboldelavida.ec/");
+ws.addEventListener('click',()=>window.location.href="https://wa.link/cxaztv");
 
 document.querySelector("header button").addEventListener('click',()=>{
     window.location.href='/menu/Hamburguesas';

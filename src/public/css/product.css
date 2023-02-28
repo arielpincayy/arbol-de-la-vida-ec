@@ -41,9 +41,6 @@ aside img{
 .extra_toggle{
     background-color: red;
 }
-.extra-p:hover{
-    background-color: red;
-}
 .content{
     display: flex;
     flex-direction: column;
@@ -97,7 +94,8 @@ aside img{
         font-size: 10vw;
     }
     aside img{
-        width: 80vw;    
+        width: 80vw;
+        height: 40vh;    
         margin: 1vh 10vw 1vh 10vw;
     }
     .content{
@@ -107,6 +105,13 @@ aside img{
     .content p {
         font-size: 8vw;
         text-align: center;
+    }
+    .extra-p{
+        padding: 0.5rem;
+        font-size: 3vw;
+    }
+    .extra_toggle{
+        background-color: red;
     }
     #cant{
         font-size: 5vw;

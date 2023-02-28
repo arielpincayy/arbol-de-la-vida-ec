@@ -1,6 +1,11 @@
 const [home, about, menu, reservation, cart] = document.querySelectorAll('.menu-white ul li');
 const nav = document.querySelector('nav');
 const bar = document.querySelector('.bar');
+const [fb,ig,ws] = document.querySelectorAll('.icons i');
+
+fb.addEventListener('click',()=>window.location.href="https://www.facebook.com/profile.php?id=100080858812728");
+ig.addEventListener('click',()=>window.location.href="https://www.instagram.com/arboldelavida.ec/");
+ws.addEventListener('click',()=>window.location.href="https://wa.link/cxaztv");
 
 home.addEventListener('click',()=>{
     window.location.href='/';
