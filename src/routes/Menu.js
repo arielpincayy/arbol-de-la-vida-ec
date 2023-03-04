@@ -10,7 +10,7 @@ app.get('/menu/:id',async(req,res)=>{
     const querySnapshot = await getDataMenu(req.params.id);
     querySnapshot.forEach((doc) => {
         arrData[0].push({id:doc.id, data:doc.data()});
-        getImg(`menu-imgs/${doc.data().nameImg}`)
+        getImg(`menu-imgs/${doc.data().seccion}.webp`)
         .then((url)=>{
             arrData[2].push({id:doc.id, data:doc.data(), url:url});
             arrData[1].push(url);
