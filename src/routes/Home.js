@@ -12,7 +12,7 @@ app.get('/',async(req,res)=>{
         getImg(`menu-imgs/${doc.data().seccion}.webp`)
         .then((url)=>{
             info.push({id:doc.id, data:doc.data(), url:url});
-            if (info.length === 2) {
+            if (info.length === 4) {
                 res.render("index",{info});
             }
         });
