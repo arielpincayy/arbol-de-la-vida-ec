@@ -32,7 +32,7 @@ const db = getFirestore();
 const storage = getStorage();
 
 const getImg=(imgRef)=>getDownloadURL(ref(storage, imgRef));
-const getData=()=>getDocs(query(collection(db, 'menu'), limit(6)));
+const getData=()=>getDocs(query(collection(db, 'menu'), limit(4)));
 const getDataMenu=(seccion)=>getDocs(query(collection(db, 'menu'), where('seccion','==',seccion)));
 const getProduct=(id)=>getDoc(doc(db, "menu", id));
 const saveReservation=(dia, hora, fechaPost, uId)=>
