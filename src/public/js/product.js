@@ -3,7 +3,7 @@ const cant = document.getElementById('cant');
 const extra = document.querySelectorAll('.extra-p');
 
 let cartId = [];
-let extraArr = [];
+let extraArr = [""];
 
 
 window.addEventListener('DOMContentLoaded',()=>{
@@ -37,7 +37,7 @@ function sumOrg() {
 boton.addEventListener('click',({target})=>{
     const priceTot= sumOrg()+ +(target.dataset.price);
     const extras = extraArr.join(',');
-    if (cant.value > 0) {
+    if (Math.floor(cant.value) > 0) {
         for (let i = 0; i < cant.value; i++) {
             cartId.push(target.dataset.id +'-'+extras+'&&'+priceTot);
             localStorage.setItem('idProduct', JSON.stringify(cartId));
