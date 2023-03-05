@@ -3,7 +3,7 @@ const cant = document.getElementById('cant');
 const extra = document.querySelectorAll('.extra-p');
 
 let cartId = [];
-let extraArr = [" - 0"];
+let extraArr = [" -0"];
 
 
 window.addEventListener('DOMContentLoaded',()=>{

@@ -169,6 +169,9 @@ aside{
         width: 45vw;
         min-height: 350px;
     }
+    .card img{
+        width: 45vw;
+    }
     .card h2{
         font-size: 5vw;
     }
