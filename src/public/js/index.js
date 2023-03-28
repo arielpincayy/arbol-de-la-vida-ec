@@ -14,7 +14,7 @@ about.addEventListener('click',()=>{
     window.location.href='/about';
 });
 menu.addEventListener('click',()=>{
-    window.location.href='/menu/hamburguesa';
+    window.location.href='/menu/Hamburguesa';
 });
 reservation.addEventListener('click',()=>{
     window.location.href='/reservation?'+existCookie()+'&'+'route=reservation';

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/product.css">
-    <title>Document</title>
+    <%- include('partials/title')%>
 </head>
 <body>
     <%-include('partials/nav')%>
@@ -15,7 +15,9 @@
         <h1><%=datos.nombre%></h1>
     </header>
     <aside>
-        <img src="<%=url%>" alt="">
+        <% if(url!==null){ %> 
+            <img src="<%=url%>" alt="">
+        <%}%>
         <div class="content">
             <h2>Ingredientes</h2>
             <ul>
@@ -23,8 +25,16 @@
                     <li><%=i%></li> 
                 <% }) %>
             </ul>
-            <p> <span>Precio:</span> $<%=datos.precio%></p>
-            <%if(extra){%>
+            <div class="precio">
+                <% datos.valor.map(e=>{%>
+                    <% if(datos.valor.length==1){%>
+                        <p class="button-price" data-name_price="<%=e%>"><%=e%></p>
+                    <%}else{%>
+                    <button class="button-price" data-name_price="<%=e%>"><%=e%></button>
+                    <%}%>
+                <%})%>
+            </div>
+            <%if(extra === 'Pizza'){%>
                 <h2>Extras</h2>
                 <div class="extra">
                     <div class="extra-p"data-name="Choclo-0.5">Choclo</div>
@@ -37,9 +47,18 @@
                     <div class="extra-p"data-name="Pollo-0.75">Pollo</div>
                 </div>
             <%}%>
+            <%if(extra === 'Desayuno'){%>
+                <h2>Extras</h2>
+                <div class="extra">
+                    <div class="extra-p"data-name="Ensalada de frutas pequeña-2.25">Ensalada de frutas pequeña</div>
+                    <div class="extra-p"data-name="Ensalada de frutas pequeña-3">Ensalada de frutas grande</div>
+                    <div class="extra-p"data-name="Tocino-1">Tocino</div>
+                    <div class="extra-p"data-name="2 Huevos-1">2 Huevos</div>
+                </div>
+            <%}%>
             <h2>Cantidad</h2>
             <input type="number" name="cant" id="cant" value="1" min="1" step="1">
-            <button data-id="<%=datos.nombre%>" data-price="<%=datos.precio%>">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
+            <button class="cart" data-id="<%=datos.nombre%>" data-name_type="" data-price="">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
         </div>
     </aside>
     <%-include('partials/footer')%>

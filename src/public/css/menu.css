@@ -1,4 +1,4 @@
-header{
+  header{
     text-align: center;
     font-size: 50px;
     color: white;
@@ -12,10 +12,10 @@ header h2{
     font-size: 1.5vw;
 }
 nav ul li:nth-child(3){
-    color: red;
+    color: var(--color-orange);
 }
 .menu{
-    background-color: red;
+    background-color: var(--color-orange);
 }
 .menu ul{
     display: flex;
@@ -42,6 +42,11 @@ aside{
     background-size: cover;
     background-position: center;
 }
+.seccion_name{
+    text-align: center;
+    padding-top: 3vh;
+    font-size: 4vw;
+}
 .box-cards{
     display: flex;
     flex-wrap: wrap;
@@ -61,7 +66,7 @@ aside{
     background-color: rgb(243, 231, 231);
     border-radius: 10px;
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
-    border: 1px solid #ec7c3c;
+    border: 1px solid var(--color-orange-2);
 }
 .card h2{
     font-size: 2.1vw;
@@ -101,6 +106,9 @@ aside{
     header h2{
         font-size: 5vw;
     }
+    .seccion_name{
+        font-size: 10vw;
+    }
     .menu ul{
         justify-content: space-around;
         margin: 0 0.5vw;    
@@ -113,7 +121,7 @@ aside{
     }
     .box-cards{
         gap: 10px;
-        padding: 5vh 1vw;
+        padding: 2vh 1vw;
     }
     .card{
         width: 45vw;

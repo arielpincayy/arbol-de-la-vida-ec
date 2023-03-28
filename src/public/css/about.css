@@ -30,7 +30,7 @@ header{
     text-shadow: 0px 2px 2px #646262;
 }
 nav ul li:nth-child(2){
-    color: red;
+    color: var(--color-orange);
 }
 aside{
     margin: 5vh 0;
@@ -64,6 +64,48 @@ aside h2{
     opacity: 1;
     transform: translateX(0vw);
     transition: .5s;
+}
+.hacer, .cumpleanos{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    margin: 3vh 0;
+}
+.content-cumpleanos{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 3vw;
+    width: 90vw;
+    margin: 0 5vw;
+}
+.cumpleanos p{
+    text-align: justify;
+}
+.hacer p{
+    margin: 2vh 5vw;
+    text-align: justify;
+}
+.fotos-hacer, .fotos-cumpleanos{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fotos-hacer-img{
+    transform: translateX(5vw);
+}
+.fotos-cumpleanos-img{
+    transform: translateX(-5vw);
+}
+.fotos-hacer-img, .fotos-cumpleanos-img{
+    width: 40vw;
+    opacity: 0;
+}
+.fotos-hacer-img_toggle, .fotos-cumpleanos-img_toggle{
+    opacity: 1;
+    transition: .5s;
+    transform: translateX(0vw);
 }
 .collage{
     width: 100vw;
@@ -108,5 +150,26 @@ aside h2{
     }
     .story img{
         width: 100%;
+    }
+    .hacer{
+        gap: 0;
+        margin-top: 3vh;
+    }
+    .hacer h2{
+        font-size: 8vw;
+    }
+    .hacer p{
+        margin: 0vh 5vw 2vh 5vw;
+    }
+    .fotos-hacer img{
+        width: 45vw;
+    }
+    .content-cumpleanos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .fotos-cumpleanos img{
+        width: 80vw;
     }
 }

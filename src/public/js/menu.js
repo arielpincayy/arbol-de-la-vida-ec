@@ -1,5 +1,6 @@
-const [hamburger, pizza, sanduche, compartir, internacional, desayuno, ensalada, helado, waffle ,pita, bebida ] = document.querySelectorAll('.menu ul li');
+const [hamburger, pizza, sanduche, compartir, internacional, desayuno, ensalada, helado, waffle ,pita, bebida, bebidaAlcohólica, bebidaCaliente ] = document.querySelectorAll('.menu ul li');
 const boton = document.querySelectorAll('.card button');
+const seccion_name = document.querySelector('.seccion_name');
 
 boton.forEach(e=>{
     e.addEventListener('click',({target})=>{
@@ -7,38 +8,47 @@ boton.forEach(e=>{
     });
 });
 
+let seccion_route = (window.location.pathname).split('/')[2];
+seccion_name.innerText=seccion_route;
+
 hamburger.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/hamburguesa';
+    window.location.href='/menu/Hamburguesa';
 });
 pizza.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/pizza';
+    window.location.href='/menu/Pizza';
 });
 compartir.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/compartir';
+    window.location.href='/menu/Compartir';
 });
 sanduche.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/sanduche';
+    window.location.href='/menu/Sanduche';
 });
 bebida.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/bebida';
+    window.location.href='/menu/Bebida';
+});
+bebidaAlcohólica.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/Cerveza-Vino-Cocteles';
+});
+bebidaCaliente.addEventListener('click',(req,res)=>{
+    window.location.href='/menu/Bebidas_calientes';
 });
 pita.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/pita';
+    window.location.href='/menu/Pita';
 });
 helado.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/helado';
+    window.location.href='/menu/Helado';
 });
 waffle.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/waffle';
+    window.location.href='/menu/Waffle';
 });
 desayuno.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/desayuno';
+    window.location.href='/menu/Desayuno';
 });
 internacional.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/internacional';
+    window.location.href='/menu/Internacional';
 });
 ensalada.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/ensalada';
+    window.location.href='/menu/Ensalada';
 });
 
 

@@ -1,17 +1,52 @@
-const boton = document.querySelector('.content button');
+const boton = document.querySelector('.cart');
 const cant = document.getElementById('cant');
 const extra = document.querySelectorAll('.extra-p');
+const button_price = document.querySelectorAll('.button-price');
 
 let cartId = [];
 let extraArr = [" -0"];
-
+let nameType = [''];
 
 window.addEventListener('DOMContentLoaded',()=>{
     const idProduct = localStorage.getItem('idProduct');
     JSON.parse(idProduct).forEach(e => {
         cartId.push(e);
     });
+    getPricesButtons();
 });
+
+const selectType=((target, e)=>{
+    let buttonPriceNum = target.dataset.name_price.split('$');
+    nameType.push(buttonPriceNum[0].slice(0, -2));
+    e.classList.toggle('button_price_toggle');
+    e.style.backgroundColor='red';
+    console.log(buttonPriceNum);
+});
+
+function takeOutColor(){
+    button_price.forEach(e=>{    
+        e.style.backgroundColor='blue';
+    });
+}
+
+button_price.forEach((e,i)=>{
+    e.addEventListener('click',async({target})=>{
+        await takeOutColor();
+        selectType(target, e, i);
+    });
+});
+
+
+
+
+function getPricesButtons(){
+    const buttonPrice = button_price[0].getAttribute('data-name_price');
+    let buttonPriceNum = buttonPrice.split('$');
+    boton.setAttribute("data-price", buttonPriceNum[1]);
+    boton.setAttribute("data-name_type", buttonPriceNum[0].slice(0, -2));
+}
+
+
 
 extra.forEach(i=>{
     i.addEventListener('click',({target})=>{
@@ -39,7 +74,7 @@ boton.addEventListener('click',({target})=>{
     const extras = extraArr.join(',');
     if (Math.floor(cant.value) > 0) {
         for (let i = 0; i < cant.value; i++) {
-            cartId.push(target.dataset.id +'-'+extras+'&&'+priceTot);
+            cartId.push(target.dataset.id+' '+nameType[nameType.length-1]+'-'+extras+'&&'+priceTot);
             localStorage.setItem('idProduct', JSON.stringify(cartId));
         }
         alert('Producto agregado al carrito');

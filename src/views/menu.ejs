@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/menu.css">
-    <title>Document</title>
+    <%- include('partials/title')%>
 </head>
 <body>
     <%-include('partials/nav')%>
@@ -26,16 +26,22 @@
             <li>Helados <span><i class="fa-solid fa-ice-cream"></i></span></li>
             <li>Waffles <span><i class="fa-solid fa-stroopwafel"></i></span></li>
             <li>Pitas <span><i class="fa-solid fa-circle"></i></span></li>
-            <li>Bebidas <span><i class="fa-solid fa-wine-glass-empty"></i></span></li>
+            <li>Bebidas <span><i class="fa-solid fa-whiskey-glass"></i></span></li>
+            <li>Bebidas alcohólicas <span><i class="fa-solid fa-martini-glass-citrus"></i></span></li>
+            <li>Bebidas calientes <span><i class="fa-solid fa-mug-hot"></i></span></li>
         </ul>
     </div>
     <aside>
+        <div class="seccion-box">
+            <h1 class="seccion_name"></h1>
+            <img src="" alt="">
+        </div>
         <div class="box-cards">
             <div class="box-cards">
-                <%  menuOrdenado.map(i=>{ %>
+                <%  arrData.map(i=>{ %>
                     <div class="card">
                     <h2><%=i.data.nombre%></h2>
-                    <p><span>Precio:</span>$<%=i.data.precio%></p>
+                    <p>Precio:$<%=i.price%></p>
                     <button data-id="<%=i.id%>">Ver más</button>
                     </div>
                 <% }) %>

@@ -32,11 +32,9 @@ const db = getFirestore();
 const storage = getStorage();
 
 const getImg=(imgRef)=>getDownloadURL(ref(storage, imgRef));
-const getData=()=>getDocs(query(collection(db, 'menu'), limit(4)));
+const getData=()=>getDocs(query(collection(db, 'menu'), limit(4), where('especial','==',true)));
 const getDataMenu=(seccion)=>getDocs(query(collection(db, 'menu'), where('seccion','==',seccion)));
 const getProduct=(id)=>getDoc(doc(db, "menu", id));
-const saveReservation=(dia, hora, fechaPost, uId)=>
-addDoc(collection(db, `reservaciones ${week()}`), {dia, hora, fechaPost, uId});
 
 const week=()=>{
   var fecha=new Date().getDate();
@@ -57,6 +55,5 @@ module.exports={
     db,
     getDataMenu,
     getImg,
-    saveReservation,
     week
 }

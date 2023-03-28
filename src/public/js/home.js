@@ -6,7 +6,7 @@ ig1.addEventListener('click',()=>window.location.href="https://www.instagram.com
 ws1.addEventListener('click',()=>window.location.href="https://wa.link/cxaztv");
 
 document.querySelector("header button").addEventListener('click',()=>{
-    window.location.href='/menu/Hamburguesas';
+    window.location.href='/menu/Hamburguesa';
 });
 boton.forEach(e=>{
     e.addEventListener('click',({target})=>{

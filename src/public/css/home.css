@@ -1,13 +1,14 @@
 body{
     overflow-x: hidden;
-}
+    /*background-color: rgba(255, 192, 203, 0.5);*/
+} 
 header{
     height: 90vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
     animation: image-dissapear 10s alternate infinite ;
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid var(--color-orange);
 }
 header h1{
     color: white;
@@ -29,7 +30,7 @@ header:hover button{
     opacity: 1;
 }
 nav ul li:nth-child(1){
-    color: red;
+    color: var(--color-orange);
 }
 @keyframes image-dissapear {
     0%{
@@ -72,6 +73,10 @@ nav ul li:nth-child(1){
 }
 aside{
     margin: 10vh 0;
+    background-image: url('/img/arbol-fondo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40vw;
 }
 .aside-title{
     text-align: center;
@@ -81,21 +86,18 @@ aside{
     display: flex;
     flex-wrap: wrap;
     gap: 2vw;
-    margin: 5vh 3vw;
+    margin: 5vh 5vw;
 }
 .box-cards h2{
     text-align: center;
     font-size: 1.5vw;
-}
-.box-cards p span{
-    color: red;
 }
 .card{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20vw;
-    padding: 5px;
+    padding: 0 5px 5px 5px;
     background-color: rgb(241, 241, 241);
     border-radius: 10px;
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
@@ -104,14 +106,14 @@ aside{
     box-shadow: 0px 4px 6px rgb(129, 126, 126);
 }
 .card img{
-    border-radius: 20px;
+    border-radius: 10px;
     width: 20vw;
     transition: .8s;
 }
 .card h2{
     font-size: 2.5vw;
     font-family: 'Dancing Script Regula', sans-serif;
-    color:  #ec7c3c;
+    color:  var(--color-orange-2);
 }
 .card p{
     text-align: center;
@@ -124,17 +126,36 @@ aside{
     width: 90%;
     margin: 10px 30% 1.5vh 30%;
     padding: 10px 0;
-    background-color: rgb(255, 0, 0);
     color: white;
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
+    background-color: rgb(88, 255, 55);
     border: none;
     border-radius: 5px;
 }
 .card button:hover{
     transform: scale(1.1);
-    background-color: rgb(88, 255, 55);
+    background-color: var(--color-orange);
 }
-
+.beer{
+    text-align: center;
+    margin: 3vh 0;
+    font-size: 5vw;
+    color: var(--color-orange);
+}
+.artesanal-beer{
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    justify-content: center;
+    margin: 3vh 3vw 0 3vw;
+}
+.artesanal-beer p{
+    text-align: justify;
+    width: 40vw;
+}
+.artesanal-beer img{
+    width: 40vw;
+}
 @media (max-width: 800px) {
     .logo{
         position: absolute;
@@ -162,12 +183,18 @@ aside{
     .social-network-icons i{
         font-size: 10vw;
     }
+    aside{
+        background-size: 60vw;
+    }
+    .box-cards{
+        margin: 5vh 2vw;
+    }
     .box-cards h2{
         font-size: 3.5vw;
     }
     .card{
         width: 45vw;
-        min-height: 350px;
+        min-height: 280px;
     }
     .card img{
         width: 45vw;
@@ -183,6 +210,25 @@ aside{
     }
     .card:hover{
         box-shadow: 0px 4px 6px rgb(54, 53, 53);
+    }
+    .products-story{
+        margin: 0 2vw;
+    }
+    .beer{
+        font-size: 8vw;
+    }
+    .artesanal-beer{
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+        margin: 0 5vw;
+    }
+    .artesanal-beer p{
+        text-align: justify;
+        width: 90vw;
+    }
+    .artesanal-beer img{
+        width: 90vw;
     }
 }
 

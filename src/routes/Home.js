@@ -9,7 +9,7 @@ app.get('/',async(req,res)=>{
     let info = [];
     const querySnapshot = await getData();
     querySnapshot.forEach((doc) => {
-        getImg(`menu-imgs/${doc.data().seccion}.webp`)
+        getImg(`especial/${doc.data().seccion}.webp`)
         .then((url)=>{
             info.push({id:doc.id, data:doc.data(), url:url});
             if (info.length === 4) {

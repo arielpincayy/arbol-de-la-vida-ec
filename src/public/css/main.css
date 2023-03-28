@@ -22,7 +22,19 @@ input[type=number]::-webkit-outer-spin-button {
 margin: 0;
 }
 
+:root {
+    --color-orange: rgb(228, 116, 12);
+    --color-orange-2:#ec7c3c;
+} 
 input[type=number] { -moz-appearance:textfield; }
+
+@-moz-document url-prefix() {
+    nav ul li{
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+    };
+}
 
 h1, h2, p, li{
     font-family: 'Inter', sans-serif;
@@ -53,7 +65,7 @@ nav ul{
 }
 nav ul li:hover{
     transform: scale(1.1);
-    color: red;
+    color: var(--color-orange-2);
 }
 footer{
     background-color: #181818;
