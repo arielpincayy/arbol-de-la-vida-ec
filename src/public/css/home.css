@@ -73,10 +73,10 @@ nav ul li:nth-child(1){
 }
 aside{
     margin: 10vh 0;
-    background-image: url('/img/arbol-fondo.png');
+    background-image: url('/img/arbol fondo.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40vw;
+    background-size: 60vw;
 }
 .aside-title{
     text-align: center;
@@ -128,7 +128,7 @@ aside{
     padding: 10px 0;
     color: white;
     box-shadow: 0px 2px 8px rgb(199, 199, 199);
-    background-color: rgb(88, 255, 55);
+    background-color: rgb(61, 155, 43);
     border: none;
     border-radius: 5px;
 }
@@ -137,21 +137,22 @@ aside{
     background-color: var(--color-orange);
 }
 .beer{
-    text-align: center;
-    margin: 3vh 0;
+    text-align: start;
+    margin: 3vh 0vw 3vh 4vw;
     font-size: 5vw;
     color: var(--color-orange);
 }
 .artesanal-beer{
     display: flex;
     flex-direction: row;
-    gap: 4vw;
+    gap: 20vw;
     justify-content: center;
-    margin: 3vh 3vw 0 3vw;
+    margin: 8vh 3vw 0 3vw;
 }
 .artesanal-beer p{
     text-align: justify;
-    width: 40vw;
+    font-weight: bold;
+    width: 30vw;
 }
 .artesanal-beer img{
     width: 40vw;
