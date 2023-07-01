@@ -1,6 +1,5 @@
 body{
     overflow-x: hidden;
-    /*background-color: rgba(255, 192, 203, 0.5);*/
 } 
 header{
     height: 90vh;
@@ -73,7 +72,7 @@ nav ul li:nth-child(1){
 }
 aside{
     margin: 10vh 0;
-    background-image: url('/img/arbol fondo.png');
+    background-image: url('/img/arbol_fondo.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60vw;
@@ -81,6 +80,18 @@ aside{
 .aside-title{
     text-align: center;
     font-size: 35px;
+}
+.descuento{
+    border: 4px solid #FF0000;
+    border-radius: 0px 34px 0px 34px;
+    background-color: #FF0000;
+    width: 80vw;
+    color: white;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    margin: 2vh 10vw;
 }
 .box-cards{
     display: flex;

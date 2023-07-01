@@ -29,10 +29,11 @@
     <br>
     <aside>
         <h2 class="aside-title">¡Prueba nuestros mejores platos!</h2>
+        <div class="descuento">!Aprovecha nuestro descuento especial de 10% en todos nuestros platos!</div>
         <div class="box-cards">
             <%  info.map(i=>{ %>
                 <div class="card">
-                <img class="img-1" src="<%=i.url%>" alt="cargando imagen..."> 
+                <img class="img-1" src="<%=i.url%>" alt="<%=i.data.nombre%>" loading="lazy"> 
                 <h2><%=i.data.nombre%></h2>
                 <button data-id="<%=i.id%>">Ver más</button>
                 </div>
@@ -43,7 +44,7 @@
         <div class="artesanal-beer">
             <p>La obtención de esta cerveza artesanal comienza con la extracción de agua de las faldas del volcán Imbabura, que se extrae de 60 metros de profundidad. La calidad del agua, su pH y su contenido mineral son esenciales para el resultado final de la cerveza. La malta utilizada es cebada que se ha llevado a su máximo potencial energético, deteniendo el proceso de germinación y conservando la energía al secarla al sol o al horno para obtener diferentes sabores y colores. <br>Las flores de una enredadera estacional que nacen en primavera después de haber invernado bajo cero, se utilizan para generar el sabor y aroma que contrarresta el dulce de la malta y añade frescura, además de brindar protección a la cerveza. Todo esto se combina en una cuidadosa elaboración artesanal para crear una gran cerveza.
             </p>
-            <img src="/img/cerveza artesanal.png" alt="">
+            <img src="/img/cerveza artesanal.webp" alt="">
         </div>
     </aside>
     <%- include('partials/footer'); %>

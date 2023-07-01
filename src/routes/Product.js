@@ -9,7 +9,6 @@ app.get("/product/:id", async(req,res)=>{
     const id = req.params.id;
     const querySnapshot = await getProduct(id);
     const datos = querySnapshot.data();
-
     if (datos.seccion === 'Pizza') {
         var extra = 'Pizza';
     } 

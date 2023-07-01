@@ -82,6 +82,10 @@ aside{
     font-size: 1.7vw;
     margin: 2vh 0;
 }
+.descuento{
+    color: red;
+    font-weight: bold;
+}
 .card button{
     font-size: 1.8vw;
     background-color: transparent;

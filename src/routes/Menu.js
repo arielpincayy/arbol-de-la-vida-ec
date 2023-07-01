@@ -6,6 +6,7 @@ const app = express.Router();
 
 
 app.get('/menu/:id',async(req,res)=>{
+  try {
     let arrData = [];
     const querySnapshot = await getDataMenu(req.params.id);
     querySnapshot.forEach((doc) => {
@@ -13,7 +14,10 @@ app.get('/menu/:id',async(req,res)=>{
     });
     setTimeout(function() {
       res.render("menu",{arrData});
-    }, 1000);
+    }, 1000);    
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 

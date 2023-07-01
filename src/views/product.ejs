@@ -16,9 +16,10 @@
     </header>
     <aside>
         <% if(url!==null){ %> 
-            <img src="<%=url%>" alt="">
+            <img src="<%=url%>" alt="<%=datos.nombre%>">
         <%}%>
         <div class="content">
+            <div class="descuento">!Descuento del 10%!</div>
             <h2>Ingredientes</h2>
             <ul>
                 <% datos.descripcion.map(i=>{ %>

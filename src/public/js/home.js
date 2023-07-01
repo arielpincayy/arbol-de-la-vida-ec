@@ -5,6 +5,7 @@ fb1.addEventListener('click',()=>window.location.href="https://www.facebook.com/
 ig1.addEventListener('click',()=>window.location.href="https://www.instagram.com/arboldelavida.ec/");
 ws1.addEventListener('click',()=>window.location.href="https://wa.link/cxaztv");
 
+
 document.querySelector("header button").addEventListener('click',()=>{
     window.location.href='/menu/Hamburguesa';
 });
