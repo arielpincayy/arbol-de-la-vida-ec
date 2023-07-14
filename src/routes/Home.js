@@ -13,7 +13,6 @@ app.get('/',async(req,res)=>{
             .then((url)=>{
                 info.push({id:doc.id, data:doc.data(), url:url});
                 if (info.length === 4) {
-                    console.log(info);
                     res.render("index",{info});
                 }
             });

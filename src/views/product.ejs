@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/popUps.css">
     <link rel="stylesheet" href="/css/product.css">
     <%- include('partials/title')%>
 </head>
@@ -19,7 +20,6 @@
             <img src="<%=url%>" alt="<%=datos.nombre%>">
         <%}%>
         <div class="content">
-            <div class="descuento">!Descuento del 10%!</div>
             <h2>Ingredientes</h2>
             <ul>
                 <% datos.descripcion.map(i=>{ %>
@@ -38,33 +38,45 @@
             <%if(extra === 'Pizza'){%>
                 <h2>Extras</h2>
                 <div class="extra">
-                    <div class="extra-p"data-name="Choclo-0.5">Choclo</div>
-                    <div class="extra-p"data-name="Aceitunas-0.5">Aceitunas</div>
-                    <div class="extra-p"data-name="Champiñones-0.5">Champiñones</div>
-                    <div class="extra-p"data-name="Queso mozarella-0.5">Queso mozarella</div>
-                    <div class="extra-p"data-name="Peperoni-0.75">Peperoni</div>
-                    <div class="extra-p"data-name="Salami italiano-0.75">Salami italiano</div>
-                    <div class="extra-p"data-name="Jamón-0.75">Jamón</div>
-                    <div class="extra-p"data-name="Pollo-0.75">Pollo</div>
+                    <div class="extra-p"data-name="Choclo-0.5">Choclo-$0.5</div>
+                    <div class="extra-p"data-name="Aceitunas-0.5">Aceitunas-$0.5</div>
+                    <div class="extra-p"data-name="Champiñones-0.5">Champiñones-$0.5</div>
+                    <div class="extra-p"data-name="Queso mozarella-0.5">Queso mozarella-$0.5</div>
+                    <div class="extra-p"data-name="Peperoni-0.75">Peperoni-$0.75</div>
+                    <div class="extra-p"data-name="Salami italiano-0.75">Salami italiano-$0.75</div>
+                    <div class="extra-p"data-name="Jamón-0.75">Jamón-$0.75</div>
+                    <div class="extra-p"data-name="Pollo-0.75">Pollo-$0.75</div>
                 </div>
             <%}%>
             <%if(extra === 'Desayuno'){%>
                 <h2>Extras</h2>
                 <div class="extra">
-                    <div class="extra-p"data-name="Ensalada de frutas pequeña-2.25">Ensalada de frutas pequeña</div>
-                    <div class="extra-p"data-name="Ensalada de frutas pequeña-3">Ensalada de frutas grande</div>
-                    <div class="extra-p"data-name="Tocino-1">Tocino</div>
-                    <div class="extra-p"data-name="2 Huevos-1">2 Huevos</div>
+                    <div class="extra-p"data-name="Ensalada de frutas pequeña-2.25">Ensalada de frutas pequeña-$2.25</div>
+                    <div class="extra-p"data-name="Ensalada de frutas pequeña-3">Ensalada de frutas grande-$3</div>
+                    <div class="extra-p"data-name="Tocino-1">Tocino-$1</div>
+                    <div class="extra-p"data-name="2 Huevos-1">2 Huevos-$1</div>
+                </div>
+            <%}%>
+            <%if(extra === 'SPH'){%>
+                <h2>Selecciona un acompañante</h2>
+                <div class="extraSPH">
+                    <div class="extraSPH-p"data-name="Papas fritas-0">Papas fritas</div>
+                    <div class="extraSPH-p"data-name="Chips-0">Chips</div>
+                    <div class="extraSPH-p"data-name="Patacones-0">Patacones</div>
+                    <div class="extraSPH-p"data-name="2 Ensalada-0">2 Ensalada</div>
                 </div>
             <%}%>
             <h2>Cantidad</h2>
             <input type="number" name="cant" id="cant" value="1" min="1" step="1">
-            <button class="cart" data-id="<%=datos.nombre%>" data-name_type="" data-price="">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
+            <button class="cart" data-id="<%=datos.seccion%> <%=datos.nombre%>" data-name_type="" data-price="">Agregar al carrito <span><i class="fa-sharp fa-solid fa-cart-shopping"></i></span></button>
         </div>
     </aside>
     <%-include('partials/footer')%>
+    <%-include('partials/popUps')%>
 </body>
 <script src="/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="/js/popUps.js"></script>
 <script src="/js/product.js"></script>
 <script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
 </html>

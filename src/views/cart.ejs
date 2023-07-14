@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/popUps.css">
     <link rel="stylesheet" href="/css/cart.css">
     <%- include('partials/title')%>
 </head>
@@ -16,9 +17,18 @@
     <aside>
         <div class="box">
             <ul id="cart-list"></ul>
+            <h2>Se encuentra en:</h2>
+            <div class="delivery">
+                <button class="b-del" data-del="1.5">Urcuquí $1.5</button>
+                <button class="b-del" data-del="2">Yachay $2</button>
+            </div>
             <div class="total">
                 <p>Total:</p>
                 <p class="suma"></p>
+            </div>
+            <div class="desc">
+                <p>Descuento del 10%:</p>
+                <p class="desc-tot"></p>
             </div>
             <button id="pedido-button">Realizar el pedido</button>
         </div>
@@ -29,15 +39,17 @@
         <ul></ul>
         <div class="pay-box">
             <h2>Escoge tu forma de pago</h2>
-            <p>Serás redirigido al chat de whatsaap, si realizaste el pago por transferencia, envia comprobante de pago</p>
-            <button class="efectivo">En efectivo</button>
-            <button class="transfe">Por transferencia</button>
+            <p>Serás redirigido al chat de whatsaap, es necesario enviar le comprobante de pago para que tu pedido sea tomado en cuenta envia comprobante de pago</p>
+            <button class="transfe">Pedir</button>
             <button class="cancelar">Cancelar</button>
         </div>
     </div>
     <%-include('partials/footer')%>
+    <%-include('partials/popUps')%>
 </body>
 <script src="/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="/js/popUps.js"></script>
 <script src="/js/cart.js"></script>
 <script src="https://kit.fontawesome.com/5a76c68f64.js" crossorigin="anonymous"></script>
 </html>

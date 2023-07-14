@@ -1,0 +1,81 @@
+.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 0vh;
+    background-color: rgba(20, 15, 15, 0.8);
+}
+.bg_toggle{
+    width: 100vw;
+    height: 100vh;
+}
+.error-pedir, .exito-pedir{
+    width: 45vw;
+    position: absolute;
+    top: -100vh;
+    left: 27.5vw;
+    right: 27.5vw;
+    background-color: white;
+    border-radius: 10px;
+}
+.error-pedir_toggle{
+    top: 5vh;
+}
+.img{
+    width: 45vw;
+    background-color: rgb(179, 97, 226);
+    border-radius: 10px 10px 0 0;
+}
+.img img{
+    width: 70%;
+    margin: 1% 15%;
+    filter: drop-shadow(5px 5px 5px #222);
+    animation: hamburguesa 0.5s infinite;
+    animation-direction: alternate;
+}
+@keyframes hamburguesa {
+   0%   {transform: translateX(5px);}
+   25%  {transform: translateX(-5px);}
+   75%  {transform: translateX(5px);}
+   100% {transform: translateX(-5px);}
+ }
+.content-error, .content-exito{
+    text-align: center;
+    font-size: 1.3vw;
+    margin: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.reintentar, .ok{
+    background-color: rgb(0, 81, 255);
+    color: white;
+    border: none;
+    font-size: 1.4vw;
+    padding: 0.5rem;
+    width: 35%;
+    margin: 0 32.5% 2vh 32.5%;
+}
+.reintentar:hover, .ok:hover{
+    background-color: rgb(84, 85, 87);
+    transform: scale(1.2);
+}
+@media (max-width:680px) {
+    .error-pedir, .exito-pedir{
+        width: 80vw;
+        left: 10vw;
+        right: 10vw;
+    }
+    .error-pedir_toggle{
+        top: 30vh;
+    }
+    .img{
+        width: 80vw;
+    }
+    .content-error, .content-exito{
+        font-size: 3vw;
+        margin: 1vw;
+    }
+    .reintentar,.ok{
+        font-size: 3vw;
+    }
+}

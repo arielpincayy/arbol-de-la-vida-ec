@@ -36,12 +36,6 @@ const getData=()=>getDocs(query(collection(db, 'menu'), limit(4), where('especia
 const getDataMenu=(seccion)=>getDocs(query(collection(db, 'menu'), where('seccion','==',seccion)));
 const getProduct=(id)=>getDoc(doc(db, "menu", id));
 
-const week=()=>{
-  var fecha=new Date().getDate();
-  var day=new Date().getDay();
-  var weekNow=((fecha - day)+"-"+(fecha - day+7));
-  return weekNow;
-}
 
 module.exports={
     auth,
@@ -54,6 +48,5 @@ module.exports={
     collection,
     db,
     getDataMenu,
-    getImg,
-    week
+    getImg
 }

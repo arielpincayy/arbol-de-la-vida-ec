@@ -2,10 +2,11 @@ const boton = document.querySelector('.cart');
 const cant = document.getElementById('cant');
 const extra = document.querySelectorAll('.extra-p');
 const button_price = document.querySelectorAll('.button-price');
+const extraSPH_p = document.querySelectorAll('.extraSPH-p')
 
 let cartId = [];
-let extraArr = [" -0"];
-let nameType = [''];
+let extraArr = ["-0"];
+let nameType = ['-0'];
 
 window.addEventListener('DOMContentLoaded',()=>{
     const idProduct = localStorage.getItem('idProduct');
@@ -17,10 +18,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 const selectType=((target, e)=>{
     let buttonPriceNum = target.dataset.name_price.split('$');
-    nameType.push(buttonPriceNum[0].slice(0, -2));
+    nameType.push(buttonPriceNum[0].split(':')[0]);
     e.classList.toggle('button_price_toggle');
     e.style.backgroundColor='red';
-    console.log(buttonPriceNum);
 });
 
 function takeOutColor(){
@@ -36,17 +36,32 @@ button_price.forEach((e,i)=>{
     });
 });
 
-
-
+extraSPH_p.forEach((e,i)=>{
+    if(i == extraSPH_p.length-1){
+        extraArr.push(';Papas fritas-0');
+        extraSPH_p[0].style.backgroundColor='red';
+    };
+    e.addEventListener('click',({target})=>{
+        extraArr.length=0;
+        extraSPH_p.forEach(o=>o.style.backgroundColor='rgb(0, 140, 255)');
+        extraArr.push(';'+target.dataset.name);
+        e.classList.toggle('button_price_toggle');
+        e.style.backgroundColor='red';
+    });
+});
 
 function getPricesButtons(){
-    const buttonPrice = button_price[0].getAttribute('data-name_price');
-    let buttonPriceNum = buttonPrice.split('$');
+    let buttonPrice = [button_price[0].getAttribute('data-name_price')];
+    let buttonPriceNum = buttonPrice[buttonPrice.length - 1].split('$');
     boton.setAttribute("data-price", buttonPriceNum[1]);
-    boton.setAttribute("data-name_type", buttonPriceNum[0].slice(0, -2));
+    button_price.forEach(e=>{
+        e.addEventListener('click',()=>{
+            buttonPrice.push(e.getAttribute('data-name_price'));
+            let buttonPriceNum = buttonPrice[buttonPrice.length - 1].split('$');
+            boton.setAttribute("data-price", buttonPriceNum[1]);
+        });
+    });
 }
-
-
 
 extra.forEach(i=>{
     i.addEventListener('click',({target})=>{
@@ -70,15 +85,25 @@ function sumOrg() {
 }
 
 boton.addEventListener('click',({target})=>{
-    const priceTot= sumOrg()+ +(target.dataset.price);
-    const extras = extraArr.join(',');
-    if (Math.floor(cant.value) > 0) {
-        for (let i = 0; i < cant.value; i++) {
-            cartId.push(target.dataset.id+' '+nameType[nameType.length-1]+'-'+extras+'&&'+priceTot);
-            localStorage.setItem('idProduct', JSON.stringify(cartId));
+    if(+(target.dataset.price)>0){
+        let priceFood = +(target.dataset.price);
+        const priceTot= sumOrg()+ priceFood;
+        const extras = extraArr.join(';');
+        if (Math.floor(cant.value) > 0) {
+            for (let i = 0; i < cant.value; i++) {
+                cartId.push(target.dataset.id+' '+nameType[nameType.length-1]+extras+'&&'+priceTot);
+                if (target.dataset.id != undefined) {
+                    localStorage.setItem('idProduct', JSON.stringify(cartId));
+                    confetti();
+                    exitoPedido();
+                }else{
+                    errorPedido();
+                }
+            }
+        }else{
+            alert('No puedes ingresar valores menores a 0. Es decir Cantidad={x∈Z/x>0}')
         }
-        alert('Producto agregado al carrito');
     }else{
-        alert('No puedes ingresar valores menores a 0. Es decir Cantidad={x∈R/x>0}')
+        errorPedido();
     }
 });
