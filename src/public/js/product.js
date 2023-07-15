@@ -38,6 +38,7 @@ button_price.forEach((e,i)=>{
 
 extraSPH_p.forEach((e,i)=>{
     if(i == extraSPH_p.length-1){
+        extraArr.pop();
         extraArr.push(';Papas fritas-0');
         extraSPH_p[0].style.backgroundColor='red';
     };

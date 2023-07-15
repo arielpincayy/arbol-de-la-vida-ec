@@ -137,7 +137,7 @@ nav ul li:nth-child(5){
     .box ul li, .total{
         font-size: 4vw;
     }
-    .box button{
+    #pedido-button{
         width: 60%;
         font-size: 5vw;
         margin: 3% 20%;
@@ -149,6 +149,16 @@ nav ul li:nth-child(5){
         border-radius: 5px;
     }
     .pay-box button{
+        font-size: 4vw;
+    }
+    .delivery{
+        width: 80vw;
+    }
+    .b-del{
+        width: 40%;
+        font-size: 4vw;
+    }
+    .desc{
         font-size: 4vw;
     }
 
