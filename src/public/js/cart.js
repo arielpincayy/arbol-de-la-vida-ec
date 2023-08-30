@@ -35,7 +35,7 @@ function cartListShow(){
         const sCopy = [...s];
         s.shift();
         const h = s.join(',');
-        const nameProduct = sCopy[0]+'['+h+']';
+        const nameProduct = sCopy[0]+'[ '+h+' ]';
         if(r==1)arrPedido.push(nameProduct);
         cartList.innerHTML+=`
         <li>
@@ -61,6 +61,7 @@ function cartListShow(){
 }
 
 buttonPedido.addEventListener('click',()=>{
+    document.querySelector('.pop-up ul').innerHTML=``;
     pop_up.style.transform='translateY(-70vh)';
     arrPedido.forEach(e=>{
         document.querySelector('.pop-up ul').innerHTML+=`<li>${e}</li>`;

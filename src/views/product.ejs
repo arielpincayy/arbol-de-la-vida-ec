@@ -23,7 +23,8 @@
             <h2>Ingredientes</h2>
             <ul>
                 <% datos.descripcion.map(i=>{ %>
-                    <li><%=i%></li> 
+                    <%let u = i.charAt(0).toUpperCase() + i.slice(1).toLowerCase()%>
+                    <li><%=u%></li> 
                 <% }) %>
             </ul>
             <div class="precio">
@@ -63,7 +64,7 @@
                     <div class="extraSPH-p"data-name="Papas fritas-0">Papas fritas</div>
                     <div class="extraSPH-p"data-name="Chips-0">Chips</div>
                     <div class="extraSPH-p"data-name="Patacones-0">Patacones</div>
-                    <div class="extraSPH-p"data-name="2 Ensalada-0">2 Ensalada</div>
+                    <div class="extraSPH-p"data-name="Ensaladas-0">2 Ensalada</div>
                 </div>
             <%}%>
             <h2>Cantidad</h2>
