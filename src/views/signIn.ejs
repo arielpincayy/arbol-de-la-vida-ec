@@ -8,6 +8,7 @@
     <%- include('partials/title')%>
 </head>
 <body>
+    <div class="nav"></div>
     <h1>Inicia Sesión</h1>
     <form action="/signIn" method="post">
         <h2>Correo electrónico</h2>
@@ -17,7 +18,7 @@
         <% if(!(route === "")){%>
             <input type="text" class="in-hidden" name="route" value="<%=route%>">
         <% }%>
-        <button type="submit" >Inicia Seción</button>
+        <button type="submit" >Inicia Sesión</button>
 
         <% if(!(err === "")){%>
             <p class="error"><%= err %></p>
