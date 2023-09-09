@@ -9,7 +9,7 @@ boton.forEach(e=>{
 });
 
 let seccion_route = (window.location.pathname).split('/')[2];
-seccion_name.innerText=seccion_route;
+seccion_name.innerText=decodeURIComponent(seccion_route);
 
 hamburger.addEventListener('click',(req,res)=>{
     window.location.href='/menu/Hamburguesa';
@@ -27,10 +27,10 @@ bebida.addEventListener('click',(req,res)=>{
     window.location.href='/menu/Bebida';
 });
 bebidaAlcohólica.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Cerveza-Vino-Cocteles';
+    window.location.href='/menu/Bebidas alcohólicas';
 });
 bebidaCaliente.addEventListener('click',(req,res)=>{
-    window.location.href='/menu/Bebidas_calientes';
+    window.location.href='/menu/Bebidas calientes';
 });
 pita.addEventListener('click',(req,res)=>{
     window.location.href='/menu/Pita';

@@ -1,3 +1,7 @@
+body{
+    background-image: url('/img/fondo-arbol-de-la-vida.webp');
+    background-size: contain;
+}
 header h1{
     margin-top: 5vh;
     text-align: center;
@@ -117,6 +121,12 @@ nav ul li:nth-child(5){
 }
 .pay-box{
     margin-top: 2vh;
+}
+.imp {
+    color:red;
+}
+.cuenta-banc h2{
+    color:black;
 }
 .transfe{
     background-color: rgb(12, 199, 12);
