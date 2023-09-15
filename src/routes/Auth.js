@@ -24,6 +24,7 @@ app.post('/signUp',(req,res)=>{
     .then((userCredential) => {
       // Signed in
           const accesToken = generateAccessToken(email);
+          if (typeof route !== 'string'){route=''};
           res.redirect('/'+route+'?accesToken='+accesToken);
     })
     .catch((error) => {
@@ -45,7 +46,7 @@ app.post('/signIn',(req,res)=>{
           // Signed in
           const user = userCredential.user;
           const accesToken = generateAccessToken(email);
-          if (typeof route !== 'string'){route= ''}
+          if (typeof route !== 'string'){route=''};
           res.redirect("/"+route+'?accesToken='+accesToken);
           // ...
         })
