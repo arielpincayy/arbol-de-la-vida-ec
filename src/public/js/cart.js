@@ -70,7 +70,13 @@ buttonPedido.addEventListener('click',()=>{
         localStorage.clear();
         confetti();
         localStorage.setItem('idProduct', "[]");
-        const place=(bDel[bDel.length-1]==2)?'Yachay':'Urcuquí';
+        var place = 'Yachay';
+        if (bDel[bDel.length-1]==1.5){
+            var place = 'Urcuquí';
+        }
+        if(bDel[bDel.length-1]==0){
+            var place = 'Retiro presencial';
+        }
         setTimeout(()=>{
             window.location.href=`https://api.whatsapp.com/send?phone=986020627&text=Hola,%20deseo%20comprar%20"${arrPedido.toString()}".%20Pagaré%20por%20transferencia,%20y%20el%20deliveri%20será%20a%20${place}`
         },1000);
