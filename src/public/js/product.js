@@ -4,9 +4,13 @@ const extra = document.querySelectorAll('.extra-p');
 const button_price = document.querySelectorAll('.button-price');
 const extraSPH_p = document.querySelectorAll('.extraSPH-p')
 
+
 let cartId = [];
 let extraArr = ["-0"];
 let nameType = ['-0'];
+
+let numPricesButtons = button_price.length;
+
 
 window.addEventListener('DOMContentLoaded',()=>{
     const idProduct = localStorage.getItem('idProduct');
@@ -20,6 +24,7 @@ const selectType=((target, e)=>{
     let buttonPriceNum = target.dataset.name_price.split('$');
     nameType.push(buttonPriceNum[0].split(':')[0]);
     e.classList.toggle('button_price_toggle');
+    console.log(nameType);
     e.style.backgroundColor='red';
 });
 
@@ -30,6 +35,9 @@ function takeOutColor(){
 }
 
 button_price.forEach((e,i)=>{
+    if (numPricesButtons>1){
+        nameType.push(button_price[0].dataset.name_price.split(':')[0]);
+    }
     e.addEventListener('click',async({target})=>{
         await takeOutColor();
         selectType(target, e, i);
