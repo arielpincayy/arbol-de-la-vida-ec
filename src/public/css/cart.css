@@ -128,6 +128,9 @@ nav ul li:nth-child(5){
 .cuenta-banc h2{
     color:black;
 }
+.cuenta-banc p{
+    font-size: 3vw;
+}
 .transfe{
     background-color: rgb(12, 199, 12);
 }
@@ -165,7 +168,7 @@ nav ul li:nth-child(5){
         width: 80vw;
     }
     .b-del{
-        width: 40%;
+        width: 30%;
         font-size: 4vw;
     }
     .desc{
