@@ -57,7 +57,6 @@ function cartListShow(){
         });
     });
     document.querySelector('.suma').innerText=`$${sum}`;
-    document.querySelector('.desc-tot').innerText=`$${sum - (sum*0.1)}`;
 }
 
 buttonPedido.addEventListener('click',()=>{
